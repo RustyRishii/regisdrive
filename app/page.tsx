@@ -11,7 +11,7 @@ export default async function Home() {
     <div className="bg-slate-600 h-100% min-h-screen flex flex-col items-center">
       <p className="text-3xl">Regis drive project</p>
       <h1 className="text-5xl p-10 align-middle items-center text-center">
-        Manage google all your google drive files in one place.
+        Manage all your google drive files in one place.
       </h1>
       <Link href={"/dashboard"}>Dashboard</Link>
       <SignIn />
