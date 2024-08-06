@@ -1,7 +1,7 @@
 "use server";
 
 import Image from "next/image";
-import { SignIn } from "@/components/sign-in";
+import { SignIn } from "@/components/auth/sign-in";
 import { headers } from "next/headers";
 import Link from "next/link";
 
