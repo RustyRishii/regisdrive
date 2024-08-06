@@ -9,10 +9,6 @@ import UserProfile from "@/components/auth/userProfile";
 
 function Dashboard() {
   const [user, setUser] = useState<any>(null);
-  const profileUrl = "";
-  useEffect(() => {
-    fetch;
-  });
 
   return (
     <div className="flex flex-col min-h-screen items-center justify-center">
