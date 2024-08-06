@@ -1,13 +1,34 @@
 
 import NextAuth from "next-auth"
 import Google from "next-auth/providers/google"
-
  
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  // providers: [
+  //   Google({
+  //     clientId: process.env.GOOGLE_CLIENT_ID,
+  //     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  //   }),
+  // ],
   providers: [
     Google({
-      clientId: process.env.AUTH_GOOGLE_ID,
-      clientSecret: process.env.AUTH_GOOGLE_SECRET,
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code",
+        },
+      },
+      // Specify the scopes to request user profile information
+      profile(profile) {
+        return {
+          id: profile.id,
+          name: profile.name,
+          email: profile.email,
+          image: profile.picture, // Ensure you return the picture URL
+        };
+      },
     }),
   ],
   callbacks: {
