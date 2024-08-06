@@ -13,7 +13,7 @@ export default async function Home() {
       <h1 className="text-5xl p-10 align-middle items-center text-center">
         Manage all your google drive files in one place.
       </h1>
-      <Link href={"/dashboard"}>Dashboard</Link>
+      {/* <Link href={"/dashboard"}>Dashboard</Link> */}
       <SignIn />
     </div>
   );
